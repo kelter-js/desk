@@ -1,0 +1,53 @@
+.navigation
+  display: flex
+  justify-content: space-between
+  min-height: 85px
+  width: 585px
+  margin: 0 auto
+  margin-top: 10px
+  margin-bottom: 10px
+
+.navigation__list
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 100%
+
+  @include resetList()
+
+.navigation__link
+  position: relative
+  padding-top: 28.5px
+  padding-bottom: 28.5px
+  text-decoration: none
+  cursor: pointer
+  z-index: 1
+
+  @include fstyle(23px, 23px, $white, 500)
+
+.navigation__link--current
+  border-bottom: solid 3px $dark-black
+
+.navigation__item
+  position: relative
+  transition: opacity .25s ease-in-out
+  -webkit-transition: opacity .25s ease-in-out
+
+  &::before
+    content: ""
+    height: 85px
+    width: 104%
+    background-color: rgba($white-rgb, .1)
+    transform: scale(0)
+    border-radius: 10px
+    z-index: 0
+
+    @include absoluteElementTopLeft(-31px, -5px)
+
+  &:hover
+
+    &::before
+      background-color: rgba($white-rgb, .3)
+      transform: scale(1)
+
+

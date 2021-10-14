@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './sass/style.sass';
-import {App} from './app.js';
-import { ErrorFallback } from './error.js';
-import { ErrorBoundary } from 'react-error-boundary';
+import { App } from './app.js';
+import { ErrorCatcher } from './error.js';
+import { BrowserRouter } from 'react-router-dom';
+import { store } from './store.js';
 
 ReactDOM.render(
-  <ErrorBoundary FallbackComponent={ErrorFallback}>
-    <App />
-  </ErrorBoundary>,
+  <ErrorCatcher>
+    <BrowserRouter>
+      <App state = { store.state }/>
+    </BrowserRouter>
+  </ErrorCatcher>,
   document.getElementById('root')
 );

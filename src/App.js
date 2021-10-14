@@ -3,9 +3,10 @@ import { Header } from './components/header/index.js';
 import { Main } from './components/main/index.js';
 
 const App = (props) => {
+  console.log(props)
   return (
     <>
-      <Header />
+      <Header navigation = {props.state.navigation}/>
       <Main />
     </>
   );
