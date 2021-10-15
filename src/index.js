@@ -9,7 +9,7 @@ import { store } from './store.js';
 ReactDOM.render(
   <ErrorCatcher>
     <BrowserRouter>
-      <App state = { store.state }/>
+      <App store = { store.state }/>
     </BrowserRouter>
   </ErrorCatcher>,
   document.getElementById('root')

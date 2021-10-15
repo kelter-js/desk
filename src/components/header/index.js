@@ -7,13 +7,13 @@ const Header = (props) => {
       <nav className="navigation">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <NavLink activeClassName='navigation__link--current' className='navigation__link' to={props.navigation.promoListURL}>
-              {props.navigation.promoListInfo}
+            <NavLink activeClassName='navigation__link--current' className='navigation__link' to={props.store.urls.promoList}>
+              {props.store.navigation.promoList.text}
             </NavLink>
           </li>
           <li className="navigation__item">
-            <NavLink activeClassName='navigation__link--current' className='navigation__link' to={props.navigation.createPromoURL}>
-              {props.navigation.createPromoInfo}
+            <NavLink activeClassName='navigation__link--current' className='navigation__link' to={props.store.urls.createPromo}>
+              {props.store.navigation.createPromo.text}
             </NavLink>
           </li>
         </ul>
