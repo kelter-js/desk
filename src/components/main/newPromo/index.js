@@ -3,7 +3,6 @@ import { PromoStages } from './generate-promo-stages.js';
 import { Form } from './form.js';
 
 const Promo = (props) => {
-  console.log(props)
   return (
     <section className='promo-creation'>
       <h2 className='promo-creation__header'>

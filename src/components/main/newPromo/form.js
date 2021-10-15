@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Select } from './select.js';
 
 const Form = (props) => {
-  const [selectData, selectDataUpdater] = useState(props.promo.firstStage.сategoryPlaceholder);
-
-  const onChange = (e) => {
-    selectDataUpdater(e.target.value)
-  }
-
   return (
     <form action='https://echo.somewhereelse.com/' method='post'>
       <fieldset className='promo-creation__stage promo-creation__stage--first'>
@@ -30,46 +25,28 @@ const Form = (props) => {
             {props.promo.firstStage.itemCategory}
           </label>
           <div className='promo-creation__select-wrapper'>
-            <select
-              value={selectData}
-              className='promo-creation__field promo-creation__field--item-category-option'
-              onChange={onChange}
-              id='item-first-category'
-              multiple={false}>
-                <option value={props.promo.firstStage.сategoryPlaceholder}>
-                  {props.promo.firstStage.сategoryPlaceholder}
-                </option>
-            </select>
+            <Select
+              categories={props.promo.firstStage.categories}
+              id={props.promo.firstStage.firstCategoryId}
+            />
           </div>
           <label className='visually-hidden' htmlFor='item-second-category'>
             {props.promo.firstStage.itemCategory}
           </label>
           <div className='promo-creation__select-wrapper'>
-            <select
-              value={selectData}
-              className='promo-creation__field promo-creation__field--item-category-option'
-              onChange={onChange}
-              id='item-second-category'
-              multiple={false}>
-                <option value={props.promo.firstStage.сategoryPlaceholder}>
-                  {props.promo.firstStage.сategoryPlaceholder}
-                </option>
-            </select>
+            <Select
+              categories={props.promo.firstStage.categories}
+              id={props.promo.firstStage.secondCategoryId}
+            />
           </div>
           <label className='visually-hidden' htmlFor='item-third-category'>
             {props.promo.firstStage.itemCategory}
           </label>
           <div className='promo-creation__select-wrapper'>
-            <select
-              value={selectData}
-              className='promo-creation__field promo-creation__field--item-category-option'
-              onChange={onChange}
-              id='item-third-category'
-              multiple={false}>
-                <option value={props.promo.firstStage.сategoryPlaceholder}>
-                  {props.promo.firstStage.сategoryPlaceholder}
-                </option>
-            </select>
+            <Select
+              categories={props.promo.firstStage.categories}
+              id={props.promo.firstStage.thirdCategoryId}
+            />
           </div>
         </div>
       </fieldset>

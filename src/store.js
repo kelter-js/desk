@@ -30,7 +30,15 @@ class Store {
           'namePlaceholder': 'Название товара',
           'attention': 'Название не должно превышать 50? символов',
           'itemCategory': 'Категория',
-          'сategoryPlaceholder': 'Выберете категорию',
+          'firstCategoryId': '1',
+          'secondCategoryId': '2',
+          'thirdCategoryId': '3',
+          'categories': [
+            'Выберете категорию',
+            'Авто',
+            'Недвижимость',
+            'Сервисы',
+          ],
         }
       },
     }
