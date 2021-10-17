@@ -11,6 +11,17 @@ const SecondStage = (props) => {
     return (e) => serviceTextUpdater({ ...serviceText, [element]: !serviceText[element] });
   }
 
+  const updateThirdStage = (e) => {
+    const stage = props.stageNumbers.thirdStage;
+    const mainHandler = props.handlers.onChangeField(priceUpdater, price, props.stage.maxFieldPriceLength);
+    mainHandler(e);
+    if (e.target.value !== '') {
+      props.update(stage, true);
+      return;
+    }
+    props.update(stage, false);
+  }
+
   return (
     <fieldset className='promo-creation__stage promo-creation__stage--first'>
       <div className='promo-creation__item-wrapper promo-creation__item-wrapper--required'>
@@ -22,6 +33,8 @@ const SecondStage = (props) => {
           placeholder={props.stage.annotationPlaceholder}
           handlers={props.handlers}
           maxLength={props.stage.maxFieldAnnotationLength}
+          update={props.update}
+          stageNumbers={props.stageNumbers}
         />
       </div>
       <div className='promo-creation__item-wrapper promo-creation__item-wrapper--required'>
@@ -35,7 +48,7 @@ const SecondStage = (props) => {
           name='item-price'
           id='item-price'
           placeholder={props.stage.pricePlaceholder}
-          onChange={props.handlers.onChangeField(priceUpdater, price, props.stage.maxFieldPriceLength)}
+          onChange={updateThirdStage}
         />
         <input
           type='checkbox'
@@ -118,6 +131,8 @@ const SecondStage = (props) => {
         rotateText={props.stage.rotateText}
         deleteText={props.stage.deleteText}
         rotate={props.stage.rotateClasses}
+        update={props.update}
+        stageNumbers={props.stageNumbers}
       />
     </fieldset>
   );

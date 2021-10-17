@@ -20,6 +20,16 @@ const Annotation = (props) => {
     props.handlers.onChangeStyle(defaultValue, textElement)(e);
   }
 
+  const updateSecondStage = (e) => {
+    const stage = props.stageNumbers.secondStage;
+    onChange(e);
+    if (e.target.value !== defaultValue) {
+      props.update(stage, true);
+      return;
+    }
+    props.update(stage, false);
+  }
+
   const onBlur = (e) => {
     if (e.target.value) {
       return;
@@ -38,7 +48,7 @@ const Annotation = (props) => {
         className='promo-creation__field promo-creation__field--item-annotation'
         name='item-annotation'
         id='item-annotation'
-        onChange={onChange}
+        onChange={updateSecondStage}
         onFocus={onFocus}
         onBlur={onBlur}
         ref={textElement}

@@ -32,6 +32,8 @@ const FirstStage = (props) => {
             categories={props.stage.categories}
             id={props.stage.firstCategoryId}
             handlers={props.handlers}
+            update={props.update}
+            stageNumbers={props.stageNumbers}
           />
         </div>
         <label className='visually-hidden' htmlFor='item-second-category'>
@@ -42,6 +44,8 @@ const FirstStage = (props) => {
             categories={props.stage.categories}
             id={props.stage.secondCategoryId}
             handlers={props.handlers}
+            update={props.update}
+            stageNumbers={props.stageNumbers}
           />
         </div>
         <label className='visually-hidden' htmlFor='item-third-category'>
@@ -52,6 +56,8 @@ const FirstStage = (props) => {
             categories={props.stage.categories}
             id={props.stage.thirdCategoryId}
             handlers={props.handlers}
+            update={props.update}
+            stageNumbers={props.stageNumbers}
           />
         </div>
       </div>

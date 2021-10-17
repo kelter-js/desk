@@ -24,6 +24,22 @@ class Store {
           'Местоположение',
           'Контакты',
         ],
+        'promoStagesState': {
+          '0': false,
+          '1': false,
+          '2': false,
+          '3': false,
+          '4': false,
+          '5': false,
+        },
+        'stageNumber': {
+          'firstStage': 0,
+          'secondStage': 1,
+          'thirdStage': 2,
+          'fourthStage': 3,
+          'fifthStage': 4,
+          'sixthStage': 5,
+        },
         'formHandlers': {
           'onBlur': this._onBlur,
           'onFocus': this._onFocus,

@@ -26,7 +26,6 @@
     content: ""
     height: 17px
     width: 2px
-    background-color: $bright-blue
     border-radius: 10px
     @include absoluteElementTopRight(18px, -22px)
 
@@ -35,6 +34,14 @@
 
     &::before
       display: none
+
+.promo-creation__stage-item--enabled
+  &::before
+    background-color: $bright-blue
+
+.promo-creation__stage-item--disabled
+  &::before
+    background-color: $dark-grey
 
 .promo-creation__stage-text
   position: relative
@@ -46,9 +53,18 @@
     content: ""
     height: 24px
     width: 24px
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1276:473)'%3E%3Cpath d='M16.9999 12.927C13.6561 16.6204 9.5 23 9.5 23C9.5 23 6.55294 18.1087 4.73842 15.5133C2.9239 12.918 0.91325 11.0516 0 10.3407C0 10.3407 0.689806 9.12296 0.80845 8.29892C0.988106 7.05115 0.80845 5.82606 0.80845 5.82606C0.80845 5.82606 3.59311 8.14465 5.21001 9.79626C6.82691 11.4479 9.16244 14.5605 9.16244 14.5605C9.16244 14.5605 13.4553 9.91741 15.8771 7.79981C21.2218 3.12632 24 1 24 1C24 1 23.7754 1.56093 23.198 3.8523C22.695 5.84875 22.6142 7.20996 22.6142 7.20996C22.6142 7.20996 20.6149 8.93416 16.9999 12.927Z' fill='%2300A0AB'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1276:473'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
 
     @include absoluteElementTopRight(-8px, -32px)
+
+.promo-creation__stage-text--disabled
+  color: $dark-grey
+
+  &::before
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='22' viewBox='0 0 24 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.9999 11.927C13.6561 15.6204 9.5 22 9.5 22C9.5 22 6.55294 17.1087 4.73842 14.5133C2.9239 11.918 0.91325 10.0516 0 9.34074C0 9.34074 0.689806 8.12296 0.80845 7.29892C0.988106 6.05115 0.80845 4.82606 0.80845 4.82606C0.80845 4.82606 3.59311 7.14465 5.21001 8.79626C6.82691 10.4479 9.16244 13.5605 9.16244 13.5605C9.16244 13.5605 13.4553 8.91741 15.8771 6.79981C21.2218 2.12632 24 0 24 0C24 0 23.7754 0.560933 23.198 2.8523C22.695 4.84875 22.6142 6.20996 22.6142 6.20996C22.6142 6.20996 20.6149 7.93416 16.9999 11.927Z' fill='%23C7C7C7'/%3E%3C/svg%3E%0A")
+
+.promo-creation__stage-text--enabled
+  &::before
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1276:473)'%3E%3Cpath d='M16.9999 12.927C13.6561 16.6204 9.5 23 9.5 23C9.5 23 6.55294 18.1087 4.73842 15.5133C2.9239 12.918 0.91325 11.0516 0 10.3407C0 10.3407 0.689806 9.12296 0.80845 8.29892C0.988106 7.05115 0.80845 5.82606 0.80845 5.82606C0.80845 5.82606 3.59311 8.14465 5.21001 9.79626C6.82691 11.4479 9.16244 14.5605 9.16244 14.5605C9.16244 14.5605 13.4553 9.91741 15.8771 7.79981C21.2218 3.12632 24 1 24 1C24 1 23.7754 1.56093 23.198 3.8523C22.695 5.84875 22.6142 7.20996 22.6142 7.20996C22.6142 7.20996 20.6149 8.93416 16.9999 12.927Z' fill='%2300A0AB'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1276:473'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
 
 .promo-creation__header
   margin: 0

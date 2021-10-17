@@ -13,11 +13,21 @@ const Select = (props) => {
     props.handlers.onChangeStyle(defaultValue, selectElement)(e);
   }
 
+  const updateSecondStage = (e) => {
+    const stage = props.stageNumbers.firstStage;
+    onChange(e);
+    if (e.target.value !== defaultValue) {
+      props.update(stage, true);
+      return;
+    }
+    props.update(stage, false);
+  }
+
   return (
     <select
       value={selectData}
       className='promo-creation__field promo-creation__field--item-category-option'
-      onChange={onChange}
+      onChange={updateSecondStage}
       onFocus={props.handlers.onFocus(selectElement)}
       onBlur={props.handlers.onBlur(defaultValue, selectElement)}
       ref={selectElement}

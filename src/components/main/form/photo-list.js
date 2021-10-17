@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RenderPhoto } from './render-photo.js';
 
 const PhotoList = (props) => {
   const [photos, photoListUpdater] = useState(props.photos);
+
+  useEffect(() => {
+    const stage = props.stageNumbers.fourthStage;
+    if (photos.length) {
+      props.update(stage, true);
+      return;
+    }
+    props.update(stage, false);
+  }, [photos])
 
   const onLoad = (reader) => {
     return () => {
