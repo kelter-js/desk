@@ -23,7 +23,7 @@ const SecondStage = (props) => {
   }
 
   return (
-    <fieldset className='promo-creation__stage promo-creation__stage--first'>
+    <fieldset className='promo-creation__stage'>
       <div className='promo-creation__item-wrapper promo-creation__item-wrapper--required'>
         <label className='promo-creation__label promo-creation__label--annotation' htmlFor='item-annotation'>
           {props.stage.itemAnnotation}
@@ -65,7 +65,12 @@ const SecondStage = (props) => {
           {props.stage.attentionPrice}
         </p>
       </div>
-      <div className='promo-creation__service-wrapper promo-creation__service-wrapper--protection'>
+      <div className='promo-creation__service-wrapper'>
+        <div className='promo-creation__item-icon promo-creation__item-icon--protection'>
+          <span className='visually-hidden'>
+            Гарантия безопасности сделки
+          </span>
+        </div>
         <input
           type='checkbox'
           checked={checkState.protection}
@@ -74,7 +79,7 @@ const SecondStage = (props) => {
           id='protection'
           onChange={props.handlers.onCheck(checkStateUpdater, checkState, 'protection')}
         />
-        <label className='promo-creation__label promo-creation__label--service' htmlFor='protection'>
+        <label className='promo-creation__label promo-creation__label--service promo-creation__label--protection' htmlFor='protection'>
           {props.stage.checkProtected}
         </label>
         <button
@@ -94,7 +99,12 @@ const SecondStage = (props) => {
           </p>
         )}
       </div>
-      <div className='promo-creation__service-wrapper promo-creation__service-wrapper--delivery'>
+      <div className='promo-creation__service-wrapper'>
+        <div className='promo-creation__item-icon promo-creation__item-icon--delivery'>
+          <span className='visually-hidden'>
+            Организация доставки до дома
+          </span>
+        </div>
         <input
           type='checkbox'
           checked={checkState.delivery}
@@ -103,8 +113,8 @@ const SecondStage = (props) => {
           id='delivery'
           onChange={props.handlers.onCheck(checkStateUpdater, checkState, 'delivery')}
         />
-        <label className='promo-creation__label promo-creation__label--service' htmlFor='delivery'>
-          {props.stage.checkProtected}
+        <label className='promo-creation__label promo-creation__label--service promo-creation__label--delivery' htmlFor='delivery'>
+          {props.stage.checkDelivery}
         </label>
         <button
           type='button'

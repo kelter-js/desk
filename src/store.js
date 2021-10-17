@@ -79,6 +79,7 @@ class Store {
           'maxFieldPriceLength': 10,
           'checkTrade': 'Торг',
           'checkProtected': 'Безопасная сделка',
+          'checkDelivery': 'Доставка',
           'showMore': 'Подробнее',
           'protectionInfo': 'Безопасная сделка — это простой и надежный способ покупать и продавать товары по всей России Безопасная сделка — это простой и надежный способ покупать и продавать товары по всей России Безопасная сделка — это простой и надежный способ покупать и продавать товары по всей России',
           'protectionMoreInfo': 'При оплате онлайн сразу вернем деньги, если товар не устроит. При оплате онлайн доставка от 374.70 ₽ и 1 рабочего дня При оплате онлайн сразу вернем деньги, если товар не устроит. При оплате онлайн доставка от 374.70 ₽ и 1 рабочего дня При оплате онлайн сразу вернем деньги, если товар не устроит. При оплате онлайн доставка от 374.70 ₽ и 1 рабочего дня',
@@ -114,6 +115,26 @@ class Store {
             'promo-creation__image-wrapper--180deg',
             'promo-creation__image-wrapper--270deg',
           ],
+        },
+        'thirdStage': {
+          'vendorLocation': 'Местоположение',
+          'locationPlaceholder': 'Введите город, улицу, дом',
+          'locationAttention': 'Введите название и выберете из списка населенный пункт и улицу',
+          'vendorPhone': 'Контакты',
+          'phonePlaceholder': '+7 (000) 000 - 00 - 00',
+          'checkMessage': 'Сообщения',
+          'checkPhone': 'Телефон',
+          'verifyPhone': 'Подтвердить номер',
+          'requiredInfo': 'Обязательные к заполнению поля',
+          'nextFields': 'Продолжить',
+          'checkBoxesState': {
+            'message': true,
+            'call': true,
+          },
+          'communicationText': {
+            'location': '',
+            'contacts': '',
+          },
         },
       },
     }
@@ -151,7 +172,7 @@ class Store {
   _onChangeField(callback, prevState, maxLength) {
     return (e) => {
       const value = e.target.value;
-      if (value.length > maxLength) {
+      if (maxLength && value.length > maxLength) {
         callback({ ...prevState, 'attention': true });
         return;
       }

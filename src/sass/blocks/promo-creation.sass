@@ -78,15 +78,13 @@
   margin-bottom: 32px
   padding: 0 32px
   padding-top: 32px
+  padding-bottom: 18px
   border: none
   box-shadow: 0 0 20px rgba($black-rgb, 0.1)
   border-radius: 8px
 
-.promo-creation__stage--first
-  padding-bottom: 18px
-
-.promo-creation__stage--second
-  padding-bottom: 18px
+.promo-creation__stage--third
+  padding-bottom: 32px
 
 .promo-creation__item-wrapper
   display: flex
@@ -107,7 +105,19 @@
   width: 69px
   margin-right: 88px
 
+.promo-creation__label--message
+  width: 76px
+  margin-right: 48px
+
+.promo-creation__label--trade
+  width: 57px
+  margin-right: 0
+
 .promo-creation__label--annotation
+  width: 65px
+  margin-right: 92px
+
+.promo-creation__label--contacts
   width: 65px
   margin-right: 92px
 
@@ -115,8 +125,13 @@
   width: 81px
   margin-right: 76px
 
+.promo-creation__label--location
+  width: 115px
+  margin-right: 42px
+
 .promo-creation__field
   margin: 0
+  margin-bottom: 2px
   padding-top: 8px
   padding-left: 16px
   padding-bottom: 6px
@@ -129,7 +144,10 @@
 .promo-creation__field--item-name
   height: 16px
   width: 474px
-  margin-bottom: 2px
+
+.promo-creation__field--location
+  height: 16px
+  width: 474px
 
 .promo-creation__field--item-annotation
   height: 118px
@@ -180,6 +198,7 @@
   &::before
     border-left: 2px solid $dark-grey
     border-top: 2px solid $dark-grey
+
     @include absoluteElementTopRight(7px, 21px)
 
   &:not(:first-of-type)
@@ -240,32 +259,41 @@
   margin-left: 157px
   margin-bottom: 24px
 
-  &::before
-    content: ""
-
   &:last-of-type
     margin-bottom: 0
 
-.promo-creation__service-wrapper--protection
-  &::before
-    height: 20px
-    width: 15px
-    background-image: url($protection-icon)
+.promo-creation__item-icon
+  position: absolute
+  height: 24px
+  width: 24px
+  background-repeat: no-repeat
+  background-position: 50% 50%
 
-    @include absoluteElementTopLeft(2px, 4.5px)
+.promo-creation__item-icon--protection
+  background-image: url($protection-icon)
 
-.promo-creation__service-wrapper--delivery
-  &::before
-    height: 14.4px
-    width: 21px
-    background-image: url($car-icon)
+  @include absoluteElementTopLeft(-2px, 4.5px)
 
-    @include absoluteElementTopLeft(5px, 2px)
+  &:hover
+    background-image: url($protection-icon-hovered)
+
+.promo-creation__item-icon--delivery
+  background-image: url($car-icon)
+
+  @include absoluteElementTopLeft(-1px, 4.5px)
+
+  &:hover
+    background-image: url($car-icon-hovered)
 
 .promo-creation__label--service
-  margin: 4px 215px 16px 72px
   font-weight: 500
   color: $dark-black
+
+.promo-creation__label--protection
+  margin: 4px 215px 16px 72px
+
+.promo-creation__label--delivery
+  margin: 4px 279px 16px 72px
 
 .promo-creation__show-more
   position: relative
@@ -300,6 +328,7 @@
 
 .promo-creation__service-wrapper .promo-creation__pseudo-arrow--opened
   text-decoration: none
+
   &::before
     top: 2px
     transform: rotate(45deg)
@@ -326,7 +355,6 @@
   &:nth-child(4n)
     margin-right: 0
 
-
 .promo-creation__photo-item--first
   &::before
     content: 'Главное фото'
@@ -339,7 +367,6 @@
 
     @include fstyle(12px, 14px, $white)
     @include absoluteElementTopLeft(112px, 0, 1)
-
 
 .promo-creation__photo
   height: 100%
@@ -403,3 +430,70 @@
   transform: rotate(270deg)
 
   @include absoluteElementTopLeft(10px, -8px, 0)
+
+.promo-creation__location-image
+  min-height: 224px
+  width: 490px
+  margin-left: 157px
+  margin-bottom: 40px
+
+.promo-creation__item-wrapper--location
+  margin-bottom: 16px
+
+.promo-creation__field--phone
+  height: 16px
+  width: 244px
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+.promo-creation__number-wrapper
+  margin-right: 40px
+
+  &::before
+    border-left: 2px solid $dark-grey
+    border-top: 2px solid $dark-grey
+
+    @include absoluteElementTopRight(7px, 21px)
+
+.promo-creation__verify-number
+  margin-left: 157px
+  border: none
+  background: none
+  text-decoration: underline
+  cursor: pointer
+  font-family: "Roboto", "Arial", sans-serif
+
+  @include fstyle(12px, 14px, $bright-blue)
+
+.promo-creation__item-wrapper--final
+  height: 32px
+  padding-left: 24px
+
+  &::before
+    top: 18px
+    left: 14px
+
+.promo-creation__required-info
+  height: 14px
+  margin: 0
+  margin-top: 13px
+  margin-right: 303.5px
+
+  @include fstyle(12px, 14px, $light-black)
+
+.promo-creation__submit
+  height: 32px
+  width: 124px
+  padding: 8px 20px
+  background: none
+  background-color: $light-blue
+  border: none
+  border-radius: 8px
+  font-family: "Roboto", "Arial", sans-serif
+  box-sizing: border-box
+  cursor: pointer
+
+  @include fstyle(14px, 16.4px, $white, 500)

@@ -11,6 +11,7 @@ const PhotoList = (props) => {
       return;
     }
     props.update(stage, false);
+    // eslint-disable-next-line
   }, [photos])
 
   const onLoad = (reader) => {

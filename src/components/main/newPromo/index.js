@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { PromoStages } from './stages-list/generate-promo-stages.js';
-import { Form } from '../form/form.js';
+import { Form } from './form/form.js';
 
 const Promo = (props) => {
   const [stage, stageUpdater] = useState(props.promo.promoStagesState);
 
   const updateStage = (currentStage, value) => {
-    console.log(value)
     const stages = {
       '0': () => {
         stageUpdater({...stage, [currentStage]: value})
@@ -30,6 +29,8 @@ const Promo = (props) => {
     stages[currentStage]();
   }
 
+  const isFieldsFilled = !(Object.values(stage).filter(item => item === true).length === props.promo.promoStages.length);
+
   return (
     <section className='promo-creation'>
       <h2 className='promo-creation__header'>
@@ -44,6 +45,7 @@ const Promo = (props) => {
       <Form
         promo={props.promo}
         update={updateStage}
+        fieldsState={isFieldsFilled}
       />
     </section>
   );

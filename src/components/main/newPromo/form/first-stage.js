@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import { Select } from '../newPromo/options/select.js';
+import { Select } from '../options/select.js';
 
 const FirstStage = (props) => {
   const [itemState, itemStateUpdater] = useState(props.stage.itemState);
 
   return (
-    <fieldset className='promo-creation__stage promo-creation__stage--first'>
+    <fieldset className='promo-creation__stage'>
       <div className='promo-creation__item-wrapper promo-creation__item-wrapper--required'>
         <label className='promo-creation__label promo-creation__label--name' htmlFor='item-name'>
           {props.stage.itemName}
