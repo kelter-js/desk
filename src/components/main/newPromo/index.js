@@ -1,6 +1,6 @@
 import React from 'react';
-import { PromoStages } from './generate-promo-stages.js';
-import { Form } from './form.js';
+import { PromoStages } from './stages-list/generate-promo-stages.js';
+import { Form } from '../form/form.js';
 
 const Promo = (props) => {
   return (

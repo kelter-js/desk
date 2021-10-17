@@ -36,7 +36,6 @@
     &::before
       display: none
 
-
 .promo-creation__stage-text
   position: relative
   margin: 0
@@ -58,27 +57,47 @@
   @include fstyle(18px, 21px, $dark-black)
 
 .promo-creation__stage
+  width: 647px
   margin: 0
-  padding: 0
+  margin-bottom: 32px
+  padding: 0 32px
+  padding-top: 32px
   border: none
   box-shadow: 0 0 20px rgba($black-rgb, 0.1)
   border-radius: 8px
 
 .promo-creation__stage--first
-  padding: 32px
+  padding-bottom: 18px
 
-.promo-creation__item-name-wrapper
+.promo-creation__stage--second
+  padding-bottom: 18px
+
+.promo-creation__item-wrapper
   display: flex
   flex-wrap: wrap
   min-height: 48px
   width: 651px
 
 .promo-creation__label
-  width: 64px
   margin-top: 8px
-  margin-right: 93px
 
   @include fstyle(14px, 16.4px, $light-black)
+
+.promo-creation__label--name
+  width: 64px
+  margin-right: 93px
+
+.promo-creation__label--category
+  width: 69px
+  margin-right: 88px
+
+.promo-creation__label--annotation
+  width: 65px
+  margin-right: 92px
+
+.promo-creation__label--photo
+  width: 81px
+  margin-right: 76px
 
 .promo-creation__field
   margin: 0
@@ -96,7 +115,17 @@
   width: 474px
   margin-bottom: 2px
 
-.promo-creation__item-name-wrapper--required
+.promo-creation__field--item-annotation
+  height: 118px
+  width: 480px
+  margin-bottom: 4px
+  padding-top: 10px
+  padding-left: 10px
+  resize: none
+
+  @include fstyle(14px, 16.4px, $dark-grey)
+
+.promo-creation__item-wrapper--required
   position: relative
   margin-bottom: 24px
 
@@ -118,25 +147,30 @@
 
   @include fstyle(12px, 14px, $dark-grey)
 
-.promo-creation__select-wrapper
+.promo-creation__attention--enabled
+  color: $red
+
+.promo-creation__pseudo-arrow
   position: relative
+
+  &::before
+    content: ""
+    height: 10px
+    width: 10px
+    border-radius: 2px
+    transform: rotate(-135deg)
+
+.promo-creation__select-wrapper
+  &::before
+    border-left: 2px solid $dark-grey
+    border-top: 2px solid $dark-grey
+    @include absoluteElementTopRight(7px, 21px)
 
   &:not(:first-of-type)
     margin-left: 157px
 
   &:last-of-type .promo-creation__field--item-category-option
     margin-bottom: 0
-
-  &::before
-    content: ""
-    height: 10px
-    width: 10px
-    border-left: 2px solid $dark-grey
-    border-top: 2px solid $dark-grey
-    border-radius: 2px
-    transform: rotate(-135deg)
-
-    @include absoluteElementTopRight(7px, 21px)
 
 .promo-creation__field--item-category-option
   height: 32px
@@ -150,6 +184,206 @@
 
   @include fstyle(14px, 16.4px, $dark-grey)
 
-
 .promo-creation__field--selected
   color: $black
+
+.promo-creation__field--item-price
+  height: 16px
+  margin-right: 40px
+  margin-bottom: 2px
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+.promo-creation__checkbox + .promo-creation__label
+  position: relative
+
+  &::before
+    content: ""
+    height: 15px
+    width: 15px
+    border: 1px solid $dark-black
+    border-radius: 50%
+
+    @include absoluteElementTopLeft(-2px, -22px)
+
+.promo-creation__checkbox:checked + .promo-creation__label
+  &::before
+    background-color: $bright-blue
+
+.promo-creation__label--trade
+  margin-right: 51px
+
+.promo-creation__service-wrapper
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  width: 491px
+  margin-left: 157px
+  margin-bottom: 24px
+
+  &::before
+    content: ""
+
+  &:last-of-type
+    margin-bottom: 0
+
+.promo-creation__service-wrapper--protection
+  &::before
+    height: 20px
+    width: 15px
+    background-image: url($protection-icon)
+
+    @include absoluteElementTopLeft(2px, 4.5px)
+
+.promo-creation__service-wrapper--delivery
+  &::before
+    height: 14.4px
+    width: 21px
+    background-image: url($car-icon)
+
+    @include absoluteElementTopLeft(5px, 2px)
+
+.promo-creation__label--service
+  margin: 4px 215px 16px 72px
+  font-weight: 500
+  color: $dark-black
+
+.promo-creation__show-more
+  position: relative
+  height: 16px
+  margin-top: 4px
+  padding: 0
+  border: none
+  background: none
+  font-family: "Roboto", "Arial", sans-serif
+  cursor: pointer
+  text-decoration: underline
+
+  @include fstyle(14px, 16.4px, $bright-blue, 500)
+
+.promo-creation__service-wrapper .promo-creation__pseudo-arrow
+  &::before
+    border-left: 2px solid $bright-blue
+    border-top: 2px solid $bright-blue
+
+    @include absoluteElementTopLeft(-1px, -17px)
+
+.promo-creation__info
+  margin: 0
+
+  @include fstyle(12px, 14px, $light-black)
+
+.promo-creation__info--text
+  margin-bottom: 12px
+
+.promo-creation__info--more-text
+  color: $grey
+
+.promo-creation__service-wrapper .promo-creation__pseudo-arrow--opened
+  text-decoration: none
+  &::before
+    top: 2px
+    transform: rotate(45deg)
+
+.promo-creation__photo-wrapper
+  display: flex
+  flex-wrap: wrap
+  width: 490px
+
+.promo-creation__photo-list
+  display: flex
+  flex-wrap: wrap
+
+  @include resetList()
+
+.promo-creation__photo-item
+  position: relative
+  height: 130px
+  width: 112px
+  margin-right: 14px
+  margin-bottom: 14px
+  border-radius: 1px
+
+  &:nth-child(4n)
+    margin-right: 0
+
+
+.promo-creation__photo-item--first
+  &::before
+    content: 'Главное фото'
+    height: 14px
+    width: 100%
+    padding: 2px 0
+    background-color: rgba($darkest-black-rgb, 0.37)
+    text-align: center
+    font-family: "Roboto", "Arial", sans-serif
+
+    @include fstyle(12px, 14px, $white)
+    @include absoluteElementTopLeft(112px, 0, 1)
+
+
+.promo-creation__photo
+  height: 100%
+  width: 100%
+
+.promo-creation__load-photo
+  display: none
+
+.promo-creation__label-photo
+  position: relative
+  height: 52px
+  width: 98px
+  padding-top: 78px
+  padding-left: 9px
+  padding-right: 5px
+  background-color: $light-grey
+  text-align: center
+  cursor: pointer
+  border-radius: 1px
+
+  @include fstyle(12px, 14px, $dark-grey)
+
+  &::before
+    content: ""
+    height: 43px
+    width: 54px
+    background-image: url("data:image/svg+xml,%3Csvg width='54' height='43' viewBox='0 0 54 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='path-1-inside-1_1276:163' fill='white'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.4376 0C15.2285 0 13.4376 1.79086 13.4376 4V5.37433H4C1.79086 5.37433 0 7.16519 0 9.37433V38.9997C0 41.2089 1.79086 42.9997 4 42.9997H49.7506C51.9597 42.9997 53.7506 41.2089 53.7506 38.9997V9.37433C53.7506 7.16519 51.9597 5.37433 49.7506 5.37433H40.3129V4C40.3129 1.79086 38.522 0 36.3129 0H17.4376Z'/%3E%3C/mask%3E%3Cpath d='M13.4376 5.37433V6.37433H14.4376V5.37433H13.4376ZM40.3129 5.37433H39.3129V6.37433H40.3129V5.37433ZM14.4376 4C14.4376 2.34315 15.7808 1 17.4376 1V-1C14.6762 -1 12.4376 1.23858 12.4376 4H14.4376ZM14.4376 5.37433V4H12.4376V5.37433H14.4376ZM4 6.37433H13.4376V4.37433H4V6.37433ZM1 9.37433C1 7.71748 2.34315 6.37433 4 6.37433V4.37433C1.23857 4.37433 -1 6.61291 -1 9.37433H1ZM1 38.9997V9.37433H-1V38.9997H1ZM4 41.9997C2.34314 41.9997 1 40.6566 1 38.9997H-1C-1 41.7612 1.23857 43.9997 4 43.9997V41.9997ZM49.7506 41.9997H4V43.9997H49.7506V41.9997ZM52.7506 38.9997C52.7506 40.6566 51.4074 41.9997 49.7506 41.9997V43.9997C52.512 43.9997 54.7506 41.7612 54.7506 38.9997H52.7506ZM52.7506 9.37433V38.9997H54.7506V9.37433H52.7506ZM49.7506 6.37433C51.4074 6.37433 52.7506 7.71747 52.7506 9.37433H54.7506C54.7506 6.61291 52.512 4.37433 49.7506 4.37433V6.37433ZM40.3129 6.37433H49.7506V4.37433H40.3129V6.37433ZM39.3129 4V5.37433H41.3129V4H39.3129ZM36.3129 1C37.9698 1 39.3129 2.34314 39.3129 4H41.3129C41.3129 1.23858 39.0743 -1 36.3129 -1V1ZM17.4376 1H36.3129V-1H17.4376V1Z' fill='%23C7C7C7' mask='url(%23path-1-inside-1_1276:163)'/%3E%3Ccircle cx='26.8753' cy='24.1875' r='12.9376' stroke='%23C7C7C7'/%3E%3Ccircle r='2.18753' transform='matrix(-1 0 0 1 45.688 13.4374)' stroke='%23C7C7C7'/%3E%3C/svg%3E%0A")
+
+    @include absoluteElementTopLeft(24px, 29px)
+
+.promo-creation__photo-button
+  background: none
+  border: none
+  padding: 0
+  cursor: pointer
+
+.promo-creation__photo-button--rotate
+  @include absoluteElementTopLeft(0, 0)
+
+.promo-creation__photo-button--delete
+  @include absoluteElementTopRight(0, 0)
+
+.promo-creation__image-wrapper
+  position: relative
+  height: 100%
+  width: 100%
+
+.promo-creation__image-wrapper--90deg
+  height: 112px
+  width: 130px
+  transform: rotate(90deg)
+
+  @include absoluteElementTopLeft(10px, -8px, 0)
+
+.promo-creation__image-wrapper--180deg
+  transform: rotate(180deg)
+
+.promo-creation__image-wrapper--270deg
+  height: 112px
+  width: 130px
+  transform: rotate(270deg)
+
+  @include absoluteElementTopLeft(10px, -8px, 0)
