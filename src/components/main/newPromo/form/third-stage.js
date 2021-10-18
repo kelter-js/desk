@@ -104,7 +104,10 @@ const ThirdStage = (props) => {
         <p className='promo-creation__required-info'>
           {props.stage.requiredInfo}
         </p>
-        <button className='promo-creation__submit' type='submit' disabled={props.fieldsState}>
+        <button
+          className={props.fieldsState ? 'promo-creation__submit' : 'promo-creation__submit promo-creation__submit--enabled'}
+          type='submit'
+          disabled={props.fieldsState}>
           {props.stage.nextFields}
         </button>
       </div>

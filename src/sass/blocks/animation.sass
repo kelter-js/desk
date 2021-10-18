@@ -2,22 +2,23 @@
   position: absolute
   top: 50%
   left: 50%
-  width: 450px
-  height: 450px
-  margin-top: -225px
-  margin-left: -225px
+  width: 3500px
+  height: 350px
+  margin-top: -450px
+  margin-left: -175px
 
 .lds-ring div
   box-sizing: border-box
   display: block
   position: absolute
-  width: 450px
-  height: 450px
+  width: 350px
+  height: 350px
   margin: 8px
-  border: 48px solid #fed
+  border: 32px solid $grey
   border-radius: 50%
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
-  border-color: #fed transparent transparent transparent
+  animation: lds-ring 1.2s cubic-bezier(.5, 0, .5, 1) infinite
+  border-color: $grey transparent transparent transparent
+  opacity: .5
 
 .lds-ring div:nth-child(1)
   animation-delay: -0.45s
