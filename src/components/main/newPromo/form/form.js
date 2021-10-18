@@ -6,7 +6,7 @@ import { ThirdStage } from './third-stage.js';
 
 const Form = (props) => {
   return (
-    <form action='https://echo.somewhereelse.com/' method='post'>
+    <form className='promo-creation__form' action='https://echo.somewhereelse.com/' method='post'>
       <FirstStage
         stage={props.promo.firstStage}
         stageNumbers={props.promo.stageNumber}

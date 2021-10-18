@@ -137,6 +137,27 @@ class Store {
           },
         },
       },
+      'promoList': {
+        'header': 'Похожие объявления',
+        'loadMore': 'Показать еще',
+        'seen': 'Просмотрено',
+        'like': 'Лайк',
+        'compare': 'Сравнить',
+        'sliderInfo': 'Включить слайдер под указателем мыши',
+        'delivery': 'Включить доставку',
+        'protection': 'Включить безопасную сделку',
+        'sliderPictures': [
+          'https://source.unsplash.com/random',
+          'https://source.unsplash.com/random',
+          'https://source.unsplash.com/random',
+          'https://source.unsplash.com/random',
+        ],
+        'currency': '₽',
+        'controlState': {
+          'like': false,
+          'compare': false,
+        },
+      },
     }
   }
 

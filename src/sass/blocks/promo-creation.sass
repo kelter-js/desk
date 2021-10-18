@@ -83,8 +83,12 @@
   box-shadow: 0 0 20px rgba($black-rgb, 0.1)
   border-radius: 8px
 
+  @media (max-width: $tablet-width)
+    margin: 0
+
 .promo-creation__stage--third
   padding-bottom: 32px
+  margin-bottom: 0
 
 .promo-creation__item-wrapper
   display: flex
@@ -99,7 +103,7 @@
 
 .promo-creation__label--name
   width: 64px
-  margin-right: 93px
+  margin-right: 92px
 
 .promo-creation__label--category
   width: 69px
@@ -115,7 +119,7 @@
 
 .promo-creation__label--annotation
   width: 65px
-  margin-right: 92px
+  margin-right: 91px
 
 .promo-creation__label--contacts
   width: 65px
@@ -127,7 +131,7 @@
 
 .promo-creation__label--location
   width: 115px
-  margin-right: 42px
+  margin-right: 41px
 
 .promo-creation__field
   margin: 0
@@ -226,6 +230,7 @@
   height: 16px
   margin-right: 40px
   margin-bottom: 2px
+  -moz-appearance: textfield
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button
@@ -357,7 +362,7 @@
 
 .promo-creation__photo-item--first
   &::before
-    content: 'Главное фото'
+    content: "Главное фото"
     height: 14px
     width: 100%
     padding: 2px 0
@@ -443,6 +448,7 @@
 .promo-creation__field--phone
   height: 16px
   width: 244px
+  -moz-appearance: textfield
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button
@@ -497,3 +503,6 @@
   cursor: pointer
 
   @include fstyle(14px, 16.4px, $white, 500)
+
+.promo-creation__form
+  margin-bottom: 40px

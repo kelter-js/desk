@@ -7,6 +7,13 @@
   margin-top: 10px
   margin-bottom: 10px
 
+  @media (max-width: $mobile-width-only)
+    flex-direction: column
+    flex-wrap: wrap
+    min-height: 125px
+    width: 300px
+    margin: 0
+
 .navigation__list
   display: flex
   align-items: center
@@ -14,6 +21,11 @@
   width: 100%
 
   @include resetList()
+
+  @media (max-width: $mobile-width-only)
+    flex-wrap: wrap
+    width: 150px
+    margin: 0 auto
 
 .navigation__link
   position: relative
@@ -24,6 +36,9 @@
   z-index: 1
 
   @include fstyle(23px, 23px, $white, 500)
+
+  @media (max-width: $mobile-width-only)
+    margin-right: 0
 
 .navigation__link--current
   border-bottom: solid 3px $white
@@ -44,8 +59,15 @@
 
     @include absoluteElementTopLeft(-31px, -5px)
 
-  &:hover
+  @media (max-width: $mobile-width-only)
+    display: flex
+    justify-content: center
 
+    &::before
+      top: 20px
+
+
+  &:hover
     &::before
       background-color: rgba($white-rgb, .3)
       transform: scale(1)
